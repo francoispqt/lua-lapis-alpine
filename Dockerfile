@@ -76,6 +76,7 @@ RUN moonc .
 WORKDIR $NGINX_PREFIX/conf
 RUN lapis build
 COPY entrypoint.sh /
+RUN chmod 700 /entrypoint.sh
 
 ENTRYPOINT ["sh"]
-CMD ["entrypoint.sh"]
+CMD ["/entrypoint.sh"]
